@@ -1,10 +1,10 @@
-package com.siepam.Twitterdatapipeline;
+package com.siepam.Meetupdatastream;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TwitterDataPipelineApplicationTests {
+class MeetupDataStreamApplicationTests {
 
 	@Test
 	void contextLoads() {
