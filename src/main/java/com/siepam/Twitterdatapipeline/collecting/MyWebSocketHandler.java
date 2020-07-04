@@ -1,8 +1,7 @@
-package com.siepam.Twitterdatapipeline;
+package com.siepam.Twitterdatapipeline.collecting;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.siepam.Twitterdatapipeline.collecting.Request;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
