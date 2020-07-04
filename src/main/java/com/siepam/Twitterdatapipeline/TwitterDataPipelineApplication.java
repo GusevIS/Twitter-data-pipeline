@@ -11,6 +11,8 @@ import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 @SpringBootApplication
 public class TwitterDataPipelineApplication {
 
+	private static final String MEETUP_URL = "ws://stream.meetup.com/2/rsvps";
+
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterDataPipelineApplication.class, args);
 	}
@@ -22,7 +24,7 @@ public class TwitterDataPipelineApplication {
 			WebSocketClient standardWebSocketClient = new StandardWebSocketClient();
 
 			standardWebSocketClient.doHandshake(
-					myWebSocketHandler, "ws://stream.meetup.com/2/rsvps");
+					myWebSocketHandler, MEETUP_URL);
 		};
 	}
 }
