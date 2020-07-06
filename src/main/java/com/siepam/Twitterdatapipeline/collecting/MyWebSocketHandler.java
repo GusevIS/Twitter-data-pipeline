@@ -9,6 +9,7 @@ import org.springframework.web.socket.handler.AbstractWebSocketHandler;
 
 @Component
 public class MyWebSocketHandler extends AbstractWebSocketHandler {
+
     @Override
     public void handleMessage(WebSocketSession session,
                               WebSocketMessage <?> message) throws JsonProcessingException {

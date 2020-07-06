@@ -8,7 +8,7 @@ public class Venue {
     private String venue_name;
     private double lon;
     private double lat;
-    private int venue_id;
+    private long venue_id;
 
     public Venue() {
     }
@@ -37,11 +37,11 @@ public class Venue {
         this.lat = lat;
     }
 
-    public int getVenue_id() {
+    public long getVenue_id() {
         return venue_id;
     }
 
-    public void setVenue_id(int venue_id) {
+    public void setVenue_id(long venue_id) {
         this.venue_id = venue_id;
     }
 

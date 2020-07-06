@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Request {
     private Venue venue;
     private String visibility;
-    private int numOfGuests;
+    private long numOfGuests;
 
     public Request(){
     }
@@ -27,11 +27,11 @@ public class Request {
         this.visibility = visibility;
     }
 
-    public int getNumOfGuests() {
+    public long getNumOfGuests() {
         return numOfGuests;
     }
 
-    public void setNumOfGuests(int numOfGuests) {
+    public void setNumOfGuests(long numOfGuests) {
         this.numOfGuests = numOfGuests;
     }
 
