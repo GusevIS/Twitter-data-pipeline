@@ -1,6 +1,6 @@
 package com.siepam.Meetupdatastream.kafka;
 
-import com.siepam.Meetupdatastream.collecting.entity.Request;
+import com.siepam.Meetupdatastream.collecting.entity.MeetupRSVP;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -22,7 +22,7 @@ public class KafkaProducerConfig {
     private String bootstrapAddress;
 
     @Bean
-    public ProducerFactory<String, Request> producerFactory() {
+    public ProducerFactory<String, MeetupRSVP> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
         configProps.put(
@@ -38,7 +38,7 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, Request> kafkaTemplate() {
+    public KafkaTemplate<String, MeetupRSVP> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 }

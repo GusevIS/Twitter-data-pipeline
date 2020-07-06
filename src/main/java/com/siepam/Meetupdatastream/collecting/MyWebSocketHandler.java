@@ -2,7 +2,7 @@ package com.siepam.Meetupdatastream.collecting;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.siepam.Meetupdatastream.collecting.entity.Request;
+import com.siepam.Meetupdatastream.collecting.entity.MeetupRSVP;
 import com.siepam.Meetupdatastream.kafka.KafkaProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +26,8 @@ public class MyWebSocketHandler extends AbstractWebSocketHandler {
     public void handleMessage(WebSocketSession session,
                               WebSocketMessage <?> message) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        Request request = objectMapper.readValue(message.getPayload().toString(), Request.class);
-        log.info("New RSVP:\n" + request.toString());
-        this.producer.sendMessage(request);
+        MeetupRSVP meetupRSVP = objectMapper.readValue(message.getPayload().toString(), MeetupRSVP.class);
+        log.info("New RSVP:\n" + meetupRSVP.toString());
+        this.producer.sendMessage(meetupRSVP);
     }
 }
