@@ -1,12 +1,27 @@
 # Summer Internship EPAM
 ## Meetup Data-Stream
-This app downloads meeting information from www.meetup.com and displays it in the console.
-> Further it will be changed: instead of the console, the data will be transmitted in Apache Kafka.
+This application downloads meeting information from www.meetup.com and transfers them to the Apache Kafka topic.
+> To change the target topic, change the variables in the application.properties and KafkaTopicConfig to the same names.
 ## Apache Kafka in Docker
 In this project, Kafka will be launched through the docker, the container configuration file is located in the *DockerKafka* folder.
-> https://zablo.net/blog/post/setup-apache-kafka-in-docker-on-windows/
-
-To run on the Windows operating system, you can use the following utility:
+To initially create and run containers, use the command:
+```sh
+docker-compose up -d
+```
+To turn containers off and on, use the commands:
+```sh
+docker-compose stop
+docker-compose start
+```
+Removing containers:
+```sh
+docker-compose down
+```
+To run Docker on the Windows operating system, you can use the following utility:
 > https://docs.docker.com/toolbox/toolbox_install_windows/
 
-If you use this, in order to go to the Kafka manager page, specify not the localhost, but the IP specified in the Docker Quickstart Terminal
+If you use this, in order to go to the Kafka manager page, specify not the localhost, but the IP specified in the Docker Quickstart Terminal.
+It is also necessary to make an entry in the hosts file with this IP of the following form:
+```sh
+*IP* kafkaserver
+```

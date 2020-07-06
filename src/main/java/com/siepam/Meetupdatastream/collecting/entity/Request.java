@@ -22,7 +22,7 @@ public class Request {
 
     @Override
     public String toString() {
-        return "Request{" +
+        return "{" +
                 "\"venue\":" + venue + ',' +
                 "\"visibility\":" + visibility + ',' +
                 "\"response\":" + response + ',' +
