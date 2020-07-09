@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    networks:
+      - kafkanet
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    hostname: kafkaserver
+    networks:
+      - kafkanet
+    ports:
+      - "9092:9092"
+    environment:
+      ADVERTISED_HOST: kafkaserver
+      ADVERTISED_HOST_NAME: kafkaserver
+      KAFKA_ADVERTISED_HOST_NAME: kafkaserver
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      ADVERTISED_PORT: 9092
+
+networks:
+  kafkanet:
+    driver: bridge
