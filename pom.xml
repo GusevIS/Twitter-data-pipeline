@@ -5,7 +5,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>Collector</module>
-		<module>SparkApplication</module>
+		<module>SparkJob</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -18,14 +18,5 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Meetup-data-stream</name>
 	<description>Meetup-data-stream by Spring Boot</description>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
