@@ -21,6 +21,9 @@ public class KafkaTopicConfig {
     @Value(value = "${kafka.retention_ms}")
     private String retentionMsConfig;
 
+    @Value(value = "${kafka.topicName}")
+    private String topicName;
+
     @Bean
     public KafkaAdmin kafkaAdmin() {
         Map<String, Object> configs = new HashMap<>();
@@ -30,7 +33,7 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic topic() {
-        return TopicBuilder.name("data_test")
+        return TopicBuilder.name(topicName)
                 .partitions(1)
                 .replicas(1)
                 .config(TopicConfig.RETENTION_MS_CONFIG, retentionMsConfig)
