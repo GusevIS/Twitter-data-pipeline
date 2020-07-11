@@ -1,7 +1,7 @@
 # Summer Internship EPAM
 ## Meetup Data-Stream
 This application downloads meeting information from www.meetup.com and transfers them to the Apache Kafka topic.
-> To change the target topic, change the variables in the application.properties and KafkaTopicConfig to the same names.
+> To change the target topic, retention.ms and address Apache Kafka, change the variables in the application.properties.
 ## Apache Kafka in Docker
 In this project, Kafka will be launched through the docker, the container configuration file is located in the *DockerKafka* folder.
 To initially create and run containers, use the command in a folder with *.yml* file:
