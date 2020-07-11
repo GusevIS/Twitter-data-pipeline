@@ -32,7 +32,7 @@ services:
     container_name: spark-worker-1
     command: start-spark worker spark-master
     ports:
-    - "8081:8080"
+    - "8081:8081"
     environment:
       SPARK_WORKER_CORES: 1
       SPARK_WORKER_MEMORY: 2g
@@ -43,7 +43,7 @@ services:
     container_name: spark-worker-2
     command: start-spark worker spark-master
     ports:
-      - "8082:8080"
+      - "8082:8081"
     environment:
       SPARK_WORKER_CORES: 1
       SPARK_WORKER_MEMORY: 2g
