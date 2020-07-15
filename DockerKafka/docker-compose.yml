@@ -6,9 +6,9 @@ services:
     container_name: zookeeper
     ports:
     - "2181:2181"
-  kafka:
+  kafkaserver:
     image: wurstmeister/kafka
-    container_name: kafka
+    container_name: kafkaserver
     hostname: kafkaserver
     ports:
       - "9092:9092"
@@ -23,11 +23,15 @@ services:
     container_name: spark-master
     command: start-spark master
     hostname: spark-master
+    links:
+      - kafkaserver
     ports:
       - "6066:6066"
       - "7070:7070"
       - "9099:8080"
       - "4040:4040"
+    volumes:
+      - //c/Users/User/Desktop/SparkJob:/tmp
   spark-worker-1:
     image: singularities/spark
     container_name: spark-worker-1
@@ -37,18 +41,6 @@ services:
     - "4041:4040"
     environment:
       SPARK_WORKER_CORES: 1
-      SPARK_WORKER_MEMORY: 2g
-    links:
-      - spark-master
-  spark-worker-2:
-    image: singularities/spark
-    container_name: spark-worker-2
-    command: start-spark worker spark-master
-    ports:
-      - "8082:8081"
-      - "4042:4040"
-    environment:
-      SPARK_WORKER_CORES: 1
-      SPARK_WORKER_MEMORY: 2g
+      SPARK_WORKER_MEMORY: 1g
     links:
       - spark-master
